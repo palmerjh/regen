@@ -1,4 +1,4 @@
-# Phaser 3 + Parcel Template
+# ReGen Game
 ## Acknowledgement
 > Thank you to [Ourcade](https://github.com/ourcade) for the phaser3-parcel-template and open license to use it :) This Readme is largely borrowed from the template Readme.
 
