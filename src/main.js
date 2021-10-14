@@ -1,18 +1,33 @@
 import Phaser from 'phaser'
 
-import HelloWorldScene from './scenes/HelloWorldScene'
+import Preload from './scenes/Preload'
+import TitleScreen from './scenes/TitleScreen'
+
+import * as Global from "./consts/Global"
+import * as SceneKeys from "./consts/SceneKeys"
+import * as Colors from "./consts/Colors"
 
 const config = {
 	type: Phaser.AUTO,
-	width: 800,
-	height: 600,
+	width: Global.Width,
+	height: Global.Height,
+	// backgroundColor: Colors.Background,
 	physics: {
 		default: 'arcade',
 		arcade: {
-			gravity: { y: 200 }
+			gravity: { y: Global.Gravity_Y },
+			// debug: true
 		}
-	},
-	scene: [HelloWorldScene]
+	}
 }
 
-export default new Phaser.Game(config)
+const game = new Phaser.Game(config)
+
+game.scene.add(SceneKeys.Preload, Preload)
+game.scene.add(SceneKeys.TitleScreen, TitleScreen)
+
+game.scene.start(SceneKeys.Preload)
+
+export default {
+	// game
+}
