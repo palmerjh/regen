@@ -2,6 +2,7 @@ import Phaser from 'phaser'
 
 import Preload from './scenes/Preload'
 import TitleScreen from './scenes/TitleScreen'
+import GameBackground from './scenes/GameBackground'
 
 import * as Global from "./consts/Global"
 import * as SceneKeys from "./consts/SceneKeys"
@@ -22,10 +23,10 @@ const config = {
 }
 
 const game = new Phaser.Game(config)
-const test
 
 game.scene.add(SceneKeys.Preload, Preload)
 game.scene.add(SceneKeys.TitleScreen, TitleScreen)
+game.scene.add(SceneKeys.GameBackground, GameBackground)
 
 game.scene.start(SceneKeys.Preload)
 

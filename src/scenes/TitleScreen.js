@@ -5,6 +5,7 @@ import * as Global from "../consts/Global"
 import * as Fonts from "../consts/Fonts"
 // @ts-ignore
 import * as Colors from "../consts/Colors"
+import * as SceneKeys from "../consts/SceneKeys"
 
 export default class TitleScreen extends Phaser.Scene
 {
@@ -27,8 +28,8 @@ export default class TitleScreen extends Phaser.Scene
 		.setOrigin(0.5)
 
 		this.input.keyboard.once('keydown-SPACE', () => {
-			console.log('space pressed')
-			// this.scene.start(Game) // start removes existing scenes; run would have overlaid Game scene on Title scene
+			// console.log('space pressed')
+			this.scene.start(SceneKeys.GameBackground) // removes TitleScreen scene and starts GameBackground
 		})
 
 
