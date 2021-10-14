@@ -5,14 +5,18 @@ import * as ImageKeys from "../consts/ImageKeys"
 
 export default class TreeOfLife extends Phaser.Scene
 {
+	preload()
+	{
+		this.load.image(ImageKeys.TreeOfLife, 'static-images/tree-of-life-cropped.jpg')
+	}
 	create()
 	{
-		// const bg = this.add.image(Global.Width*0.5, Global.Height*0.5, ImageKeys.TreeBG)
+		// const bg = this.add.image(Global.Width*0.5, Global.Height*0.5, ImageKeys.TreeOfLife)
 		// bg.setOrigin(0.5).setDisplaySize(Global.Height*0.75, Global.Height)
-		const bg = this.add.image(0, 0, ImageKeys.TreeOfLife)
-		const camera = this.cameras.add(0, 0, bg.width, bg.height)
+		const bg = this.add.image(0, 0, ImageKeys.TreeOfLife).setOrigin(0)
+		// const camera = this.cameras.add(0, 0, bg.width, bg.height)
 		// this.cameras.resize(bg.width, bg.height)
-		camera.setBackgroundColor(0xffffff)
+		// camera.setBackgroundColor(0xffffff)
 
 	}
 }

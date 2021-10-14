@@ -1,5 +1,5 @@
-const Width = 800
-const Height = 600
+const Width = 460
+const Height = 776
 const Gravity_Y = 0
 
 export {
