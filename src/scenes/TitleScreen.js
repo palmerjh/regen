@@ -26,7 +26,7 @@ export default class TitleScreen extends Phaser.Scene
 		})
 		.setOrigin(0.5)
 
-		this.input.keyboard.on('keydown-SPACE', () => {
+		this.input.keyboard.once('keydown-SPACE', () => {
 			console.log('space pressed')
 			// this.scene.start(Game) // start removes existing scenes; run would have overlaid Game scene on Title scene
 		})
