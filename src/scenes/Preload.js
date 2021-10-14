@@ -13,7 +13,8 @@ export default class Preload extends Phaser.Scene
 		const fonts = new WebFontFile(this.load, Fonts.Primary_Single_Quotes)
 		this.load.addFile(fonts)
 
-		this.load.image(ImageKeys.TreeBG, 'static_images/tree.svg')
+		this.load.svg(ImageKeys.TreeBG, 'static_images/tree.svg')
+		this.load.svg(ImageKeys.TreeOfLife, 'static_images/tree-of-life.svg')
 
 		// this.load.audio('test_mp3', 'sfx/mpthreetest.mp3')
 		// this.load.audio(AudioKeys.PongBeep, 'sfx/ping_pong_8bit_beeep.wav')

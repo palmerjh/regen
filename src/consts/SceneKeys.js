@@ -1,9 +1,11 @@
 const Preload = 'preload'
 const TitleScreen = 'title-screen'
-const GameBackground = 'game-background'
+const TestBackground = 'test-background'
+const TreeOfLife = 'tree-of-life'
 
 export {
 	Preload,
 	TitleScreen,
-	GameBackground
+	TestBackground,
+	TreeOfLife
 }
