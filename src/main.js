@@ -22,6 +22,7 @@ const config = {
 }
 
 const game = new Phaser.Game(config)
+const test
 
 game.scene.add(SceneKeys.Preload, Preload)
 game.scene.add(SceneKeys.TitleScreen, TitleScreen)
