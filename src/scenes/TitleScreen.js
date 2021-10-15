@@ -30,7 +30,7 @@ export default class TitleScreen extends Phaser.Scene
 		this.input.keyboard.once('keydown-SPACE', () => {
 			// console.log('space pressed')
 			// this.scene.start(SceneKeys.TestBackground) // removes TitleScreen scene and starts TestBackground
-			this.scene.start(SceneKeys.TreeOfLife) // removes TitleScreen scene and starts TreeOfLife
+			this.scene.start(SceneKeys.Game) // removes TitleScreen scene and starts Game
 
 		})
 

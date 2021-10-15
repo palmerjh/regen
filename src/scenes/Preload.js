@@ -15,7 +15,7 @@ export default class Preload extends Phaser.Scene
 
 		// this.load.svg(ImageKeys.TreeBG, 'static_images/tree.svg')
 		// this.load.svg(ImageKeys.TreeOfLife, 'static_images/tree-of-life.svg')
-		this.load.image(ImageKeys.TreeOfLife, 'static_images/tree-of-life.jpg')
+		// this.load.image(ImageKeys.TreeOfLife, 'static_images/tree-of-life-cropped.jpg')
 
 		// this.load.audio('test_mp3', 'sfx/mpthreetest.mp3')
 		// this.load.audio(AudioKeys.PongBeep, 'sfx/ping_pong_8bit_beeep.wav')
