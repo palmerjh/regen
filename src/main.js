@@ -15,6 +15,9 @@ const config = {
 	type: Phaser.AUTO,
 	width: Global.Width,
 	height: Global.Height,
+	dom: {
+		createContainer: true
+	},
 	backgroundColor: Colors.Background,
 	physics: {
 		default: 'arcade',

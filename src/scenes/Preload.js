@@ -4,6 +4,7 @@ import WebFontFile from "../util/WebFontFile";
 import * as ImageKeys from "../consts/ImageKeys"
 import * as Fonts from "../consts/Fonts"
 import { TitleScreen } from "../consts/SceneKeys"
+import * as Flows from "../consts/Flows"
 // import * as AudioKeys from '../consts/AudioKeys'
 
 export default class Preload extends Phaser.Scene
@@ -14,11 +15,14 @@ export default class Preload extends Phaser.Scene
 		this.load.addFile(fonts)
 
 		this.load.image(ImageKeys.TreeOfLife, 'static-images/tree-of-life.png')
+		this.load.image(ImageKeys.TreePortal, 'static-images/tree-of-life-garden.png')
 
+		// Testing tilemaps:
 		this.load.image('mountain-tiles', 'tiles/lost-garden/mountain-landscape.png')
 		this.load.image('wood-tiles', 'tiles/lost-garden/wood_tileset.png')
-
 		this.load.tilemapTiledJSON('garden', 'tiles/lost-garden/lost-garden.json')
+
+		this.load.html(Flows.Text, 'flows/test.html')
 
 		// this.load.svg(ImageKeys.TreeBG, 'static_images/tree.svg')
 		// this.load.svg(ImageKeys.TreeOfLife, 'static_images/tree-of-life.svg')
