@@ -7,7 +7,7 @@ export default class TreeOfLife extends Phaser.Scene
 {
 	preload()
 	{
-		this.load.image(ImageKeys.TreeOfLife, 'static-images/tree-of-life.png')
+		// this.load.image(ImageKeys.TreeOfLife, 'static-images/tree-of-life.png')
 	}
 	create()
 	{

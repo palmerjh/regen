@@ -13,6 +13,13 @@ export default class Preload extends Phaser.Scene
 		const fonts = new WebFontFile(this.load, Fonts.Primary_Single_Quotes)
 		this.load.addFile(fonts)
 
+		this.load.image(ImageKeys.TreeOfLife, 'static-images/tree-of-life.png')
+
+		this.load.image('mountain-tiles', 'tiles/lost-garden/mountain-landscape.png')
+		this.load.image('wood-tiles', 'tiles/lost-garden/wood_tileset.png')
+
+		this.load.tilemapTiledJSON('garden', 'tiles/lost-garden/lost-garden.json')
+
 		// this.load.svg(ImageKeys.TreeBG, 'static_images/tree.svg')
 		// this.load.svg(ImageKeys.TreeOfLife, 'static_images/tree-of-life.svg')
 		// this.load.image(ImageKeys.TreeOfLife, 'static_images/tree-of-life-cropped.jpg')
