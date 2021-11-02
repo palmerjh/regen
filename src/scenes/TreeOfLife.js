@@ -18,15 +18,16 @@ export default class TreeOfLife extends Phaser.Scene
 		// this.cameras.resize(bg.width, bg.height)
 		// camera.setBackgroundColor(0xffffff)
 
-		this.add.text(600, 450, "flows", {
+		this.add.text(575, 460, "gardens", {
 			color: "#000000",
-			fontSize: 36,
+			// @ts-ignore
+			fontSize: 32,
 			fontStyle: "bold"
 		}).setOrigin(0.5);
 
-		this.add.text(600, 520, "users", {
+		this.add.text(575, 505, "gardeners", {
 			color: "#FFFFFF",
-			fontSize: 36,
+			fontSize: 32,
 			fontStyle: "bold"
 		}).setOrigin(0.5);
 

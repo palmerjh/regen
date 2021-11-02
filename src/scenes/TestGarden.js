@@ -75,6 +75,10 @@ export default class TestGarden extends Phaser.Scene
 				this.privacy.setText("stay private | feel into sharing later | share in this space | share in another space")
 			}
 		});
+
+		this.input.keyboard.once('keydown-SHIFT', () => {
+			this.scene.start(SceneKeys.Game) // removes TitleScreen scene and starts Game
+		})
 	}
 
 	update()

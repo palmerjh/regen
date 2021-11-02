@@ -2,6 +2,9 @@ import Phaser from "phaser";
 
 import * as SceneKeys from "../consts/SceneKeys"
 import * as Global from "../consts/Global"
+import * as Colors from "../consts/Colors"
+
+import PlayerOrb from "../components/PlayerOrb";
 
 export default class Game extends Phaser.Scene
 {
@@ -9,6 +12,7 @@ export default class Game extends Phaser.Scene
 	{
 		this.activeIsWhite = true
 		this.radius = 10
+		this.speed = 200
 	} 
 
 	create()
@@ -21,15 +25,32 @@ export default class Game extends Phaser.Scene
 		// this.time.delayedCall(500, () => {})
 
 		// const radius = 10
-		this.white = this.createBall(0xffffff, 0x000000)
-		this.black = this.createBall(0x000000, 0xffffff)
+		// TODO increase stroke size so that white and black are equal in proportion in circle cross-section
+		// TODO down the road I'll make the tree a collision object and so the orb can fade smoothly to the tree of 
+		// life garden
+		this.cursors = this.input.keyboard.createCursorKeys()
+		this.black = new PlayerOrb(this, Global.Width / 2, Global.Height / 2 - this.radius/2, this.radius, this.speed, this.cursors, Colors.Black)
+		this.white = new PlayerOrb(this, Global.Width / 2, Global.Height / 2 - this.radius/2, this.radius, this.speed, this.cursors, Colors.White)
 		this.black.setVisible(false)
 
-		this.cursors = this.input.keyboard.createCursorKeys()
+		// this.cursors = this.input.keyboard.createCursorKeys()
 	}
 
 	update()
 	{
+		this.black.update()
+		this.white.update()
+		if (this.white.x < 241 || this.white.x > 441) {
+			this.scene.stop(SceneKeys.TreeOfLife)
+			this.scene.start(SceneKeys.Forest)
+
+			if (this.white.y < 490) {
+				// send to this color side of 2d view
+
+			} else {
+				// send to this color side of 2d view
+			}
+		} 
 		if (this.white.y > Global.Height*0.5 - this.radius*0.5) {
 			this.activeIsWhite = false
 		} else {
@@ -37,57 +58,10 @@ export default class Game extends Phaser.Scene
 		}
 		this.white.setVisible(this.activeIsWhite)
 		this.black.setVisible(!this.activeIsWhite)
-		/** @type {Phaser.Physics.Arcade.Body} */
-		// @ts-ignore
-		const white = this.white.body
-		/** @type {Phaser.Physics.Arcade.Body} */
-		// @ts-ignore
-		const black = this.black.body
-		const speed = 100
-		if(this.cursors.left.isDown)
-		{
-		  white.setVelocityX(-speed);
-		  black.setVelocityX(-speed);
-		//   player.anims.play('left', true);
-		}
-		else if (this.cursors.right.isDown)
-		{
-		  white.setVelocityX(speed);
-		  black.setVelocityX(speed);
-		//   player.anims.play('right', true);
-		}
-		else if(this.cursors.up.isDown)
-		{
-		  white.setVelocityY(-speed);
-		  black.setVelocityY(-speed);
-		//   player.anims.play('left', true);
-		}
-		else if (this.cursors.down.isDown)
-		{
-		  white.setVelocityY(speed);
-		  black.setVelocityY(speed);
-		//   player.anims.play('right', true);
-		}
-		else 
-		{ 
-			white.setVelocity(0);
-			black.setVelocity(0);
-        	// player.anims.play('turn', true);
-		}
+		
 		if (this.white.y < 200) {
 			this.scene.stop(SceneKeys.TreeOfLife)
 			this.scene.start(SceneKeys.TestGarden)
 		}
-	}
-
-	createBall(fill, stroke)
-	{
-		const ball = this.add.arc(Global.Width*0.5, Global.Height*0.5 - this.radius*0.5, this.radius)
-		ball.setFillStyle(fill, 1).setStrokeStyle(1, stroke, 1)
-		this.physics.add.existing(ball)
-		// @ts-ignore
-		ball.body.setCollideWorldBounds(true)
-
-		return ball
 	}
 }
