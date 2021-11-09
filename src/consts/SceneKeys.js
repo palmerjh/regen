@@ -4,6 +4,9 @@ const TestBackground = 'test-background'
 const TreeOfLife = 'tree-of-life'
 const Game = 'game'
 const TestGarden = 'test-garden'
+const Forest = 'forest'
+const Compost = 'compost'
+const Cultivate = 'cultivate'
 
 export {
 	Preload,
@@ -11,5 +14,8 @@ export {
 	TestBackground,
 	TreeOfLife,
 	Game,
-	TestGarden
+	TestGarden,
+	Forest,
+	Compost,
+	Cultivate
 }
