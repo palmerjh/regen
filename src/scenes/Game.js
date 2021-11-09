@@ -69,10 +69,14 @@ export default class Game extends Phaser.Scene
 		//   player.anims.play('right', true);
 		}
 		else 
-		{
+		{ 
 			white.setVelocity(0);
 			black.setVelocity(0);
         	// player.anims.play('turn', true);
+		}
+		if (this.white.y < 200) {
+			this.scene.stop(SceneKeys.TreeOfLife)
+			this.scene.start(SceneKeys.TestGarden)
 		}
 	}
 

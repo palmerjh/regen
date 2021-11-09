@@ -5,6 +5,7 @@ import TitleScreen from './scenes/TitleScreen'
 import TestBackground from './scenes/TestBackground'
 import TreeOfLife from './scenes/TreeOfLife'
 import Game from './scenes/Game'
+import TestGarden from './scenes/TestGarden'
 
 import * as Global from "./consts/Global"
 import * as SceneKeys from "./consts/SceneKeys"
@@ -14,6 +15,9 @@ const config = {
 	type: Phaser.AUTO,
 	width: Global.Width,
 	height: Global.Height,
+	dom: {
+		createContainer: true
+	},
 	backgroundColor: Colors.Background,
 	physics: {
 		default: 'arcade',
@@ -31,6 +35,7 @@ game.scene.add(SceneKeys.TitleScreen, TitleScreen)
 game.scene.add(SceneKeys.TestBackground, TestBackground)
 game.scene.add(SceneKeys.TreeOfLife, TreeOfLife)
 game.scene.add(SceneKeys.Game, Game)
+game.scene.add(SceneKeys.TestGarden, TestGarden)
 
 game.scene.start(SceneKeys.Preload)
 

@@ -7,7 +7,7 @@ export default class TreeOfLife extends Phaser.Scene
 {
 	preload()
 	{
-		this.load.image(ImageKeys.TreeOfLife, 'static-images/tree-of-life.png')
+		// this.load.image(ImageKeys.TreeOfLife, 'static-images/tree-of-life.png')
 	}
 	create()
 	{
@@ -17,6 +17,18 @@ export default class TreeOfLife extends Phaser.Scene
 		// const camera = this.cameras.add(0, 0, bg.width, bg.height)
 		// this.cameras.resize(bg.width, bg.height)
 		// camera.setBackgroundColor(0xffffff)
+
+		this.add.text(600, 450, "flows", {
+			color: "#000000",
+			fontSize: 36,
+			fontStyle: "bold"
+		}).setOrigin(0.5);
+
+		this.add.text(600, 520, "users", {
+			color: "#FFFFFF",
+			fontSize: 36,
+			fontStyle: "bold"
+		}).setOrigin(0.5);
 
 	}
 }
