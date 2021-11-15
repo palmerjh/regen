@@ -4,6 +4,9 @@
 
 ![License](https://img.shields.io/badge/license-MIT-green)
 
+## Land Acknowledgement
+I am a spiritual computing phd student at the university of southern california, which occupies the stolen land of the Tongva people, [Tovaangar](https://storymaps.arcgis.com/stories/72adcaec1d894f81a06808393afce24f). 
+
 ## Prerequisites
 
 You'll need [Node.js](https://nodejs.org/en/), [npm](https://www.npmjs.com/), and [Parcel](https://parceljs.org/) installed.
